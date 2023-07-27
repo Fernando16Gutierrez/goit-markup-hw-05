@@ -173,7 +173,7 @@
   /*Aca empieza ventana modal*/
   .modal-sol{
     height: 650px;
-    display: fle;
+    display: flex;
     justify-content: space-evenly;
     align-items: center;
     padding: 0 40px;
