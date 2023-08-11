@@ -1,4 +1,3 @@
 
 ### Trabajo 5 - GoIt
-  https://github.com/Fernando16Gutierrez/goit-markup-hw-05.git
-# goit-markup-hw-05
+  t https://fernando16gutierrez.github.io/goit-markup-hw-05/
