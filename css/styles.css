@@ -44,28 +44,21 @@ body {
   letter-spacing: 3%;
   padding: 24px 0 ;
 }
+.header .container{
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
 .page-header {
   display: flex;
   justify-content: space-between;
-  
 }
 .page-header li {
 margin: 32px 93px 30px  0;
 position: relative;
 }
-.page-header li::after{
-  content: "";
-  background-color: var(--color-web);
-  position: absolute;
-  left:  0;
-  top: 100%;
-  width: 100%;
-  height: 2px;
-  opacity: 0;
-  transition: opacity 0.3s;
+.header-ref:focus{
+color: var(--color-web);
 }
-.page-header li.selected::after,
-.page-header li:hover::after{
+.page-header li::after{
   opacity: 0.8;
 }
 .links-header {
@@ -74,8 +67,18 @@ position: relative;
   letter-spacing: 2%;
   color: var(--color-texto);
 }
-.links-header:hover {
+.links-header:hover,
+.header-ref:focus,
+.links-header.header-ref  {
   color: var(--color-web);
+}
+.header-ref::after{
+border: var(--color-web) solid 1px;
+position: relative;
+display: block;
+width: auto;
+content: "";
+bottom: -32px;
 }
 .page-header-contain {
   display:flex;
@@ -145,12 +148,11 @@ position: relative;
   background-color: var(--color-principal);
   color:var(--color-web);
 }
-
 /*Aca empieza contenido de servicios prestados*/
 
 .soluciones {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-  url(../css/images/sala.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+  url(../images/sala.jpg);
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -193,81 +195,47 @@ position: relative;
   cursor: pointer;
 }
 /*Aca empieza ventana modal*/
-.modal-sol{
-  height: 650px;
+.backdrop{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color:#111111bd; 
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 0 40px;
+  transition: opacity 300ms ease, visibility 300ms ease;
+  opacity: 100%;
+  pointer-events: auto;
   }
-  .modal-solu h2 {
-    font-size: 50px; 
-    font-weight: 500px; 
-    margin-bottom: 30px;
-  }
-  .data-modal-open {
-    background-color: var(--color-web);
-    font-weight: var(--font-weigth-7);
-    font-size: 16px;
-    line-height: 16px;
-    letter-spacing: 6%;
-    text-align: center;
-    color: var(--color-principal);
-    border: 4px solid transparent;
-    border-radius: 4px;
-    padding: 10px 32px 10px 32px;
-    margin-bottom: 200px;
-    cursor: pointer;
-  }
-  .data-modal-open:hover {
-    border: 4px solid blue;
-    cursor: pointer;
-  }
-  .data-modal{
-      opacity: 0;
-      visibility: hidden;
-      position: fixed;
-      z-index: 1000;
-      width: 100%;
-      height: 100vh;
-      top: 0;
-      left: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
-  .data-modal-close{
-      position: absolute;
-      top: 5px;
-      right: 5px;
-      display: inline-block;
-      width: 25px;
-      height: 25px;
-      background-color: #c44a4a;
-      color: white;
-      line-height: 25px;
-      cursor: pointer;
-      border-radius: 50%;
+  .backdrop.is-hidden{
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
   }
   .modal{
-      width: 40%;
-      height: 50%;
-      background-color: white;
-      overflow: hidden;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      position: relative;
-      transition: transform 3s;
-      transform: translateY(0%);
-      border-radius: 10px;
+  width: 528px;
+  height: 581px;
+  background-color: var(--aplicaciones);
+  margin: auto;
+  border-radius: 6px;
+  position: relative;
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);;
   }
-  .modal > img{
-      height: 50%;
+  .btn-close{
+    position: absolute;
+    display: flex;
+    margin-left: 490px;
+    margin-top: 8px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    width: 30px;
+    height: 30px;
   }
-  .modal-close{
-      transform: translateY(-200%);
+  .svg-close{
+    height: 18px;
+    width: 18px;
+
   }
   /* Aca termina ventana modal*/
 /*Aca empieza contenido calidad del servicio*/
@@ -326,7 +294,7 @@ margin: 89px 50px 0 0;
   margin: 35px;
 }
 .escritorio{
-  background-image: url(../css/images/pc.jpg);
+  background-image: url(../images/pc.jpg);
   background-size: cover;
   width: 370px;
   height: 274px;
@@ -344,14 +312,14 @@ margin: 89px 50px 0 0;
   background-color:rgba(0, 0, 0, 0.7);
 }
 .celular{
-  background-image: url(../css/images/movil.jpg);
+  background-image: url(../images/movil.jpg);
   background-size: cover;
   width: 370px;
   height: 274px;
 }
 
 .diseño{
-  background-image: url(../css/images/diseño.jpg);
+  background-image: url(../images/diseño.jpg);
   background-size: cover;
   width: 370px;
   height: 274px;
