@@ -130,7 +130,6 @@ bottom: -32px;
   margin: 144px 56px 31px 0;
 }
 .boton-link {
-  background-color:color(OxFFF5F4FA);
   font-weight: 500;
   font-size: 16px;
   line-height: 26px;
@@ -139,15 +138,17 @@ bottom: -32px;
   cursor: pointer;
   color: rgba(33,33,33, 1);
   padding: 6px 24px 6px 23px;
-  border: 1px solid gray;
+  border-radius: 4px;
+  border: 0;
 }
 .boton-link:hover {
   background-color: var(--color-web);
   color: white;
 }
 .boton-link:focus{
-  background-color: var(--color-principal);
-  color:var(--color-web);
+  color:white;
+  background-color: var(--color-web);
+  box-shadow: 0px 5px 0px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);;
 }
 /*Aca empieza contenido de servicios prestados*/
 
