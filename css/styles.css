@@ -540,16 +540,14 @@ fill:rgba(175, 177, 184, 1);
 }
 
 /*Aca empieza el contenido footer de las principal y portafolio*/
-.color-footer{
-  width: 1600px;
-  margin: 0 auto;
-}
 .container-footer{
   margin: auto;
   display:flex;
   gap: 70px;
 }
 .color-footer {
+  width: 1600px;
+  margin: 0 auto;
   background-color: var(--color-secundario);
   display: flex;
   flex-direction: column;
@@ -572,16 +570,16 @@ fill:rgba(175, 177, 184, 1);
   margin: 0;
 }
 .footer-link-mexico{
-  color: #FFF;
+color: #FFF;
 font-family: Roboto;
 font-size: 14px;
 font-style: normal;
 font-weight: 400;
-line-height: 24px; /* 171.429% */
+line-height: 24px; 
 letter-spacing: 0.42px;
 }
 .footer-link-item {
-  color: rgba(255, 255, 255, 0.60);
+color: rgba(255, 255, 255, 0.60);
 font-family: Roboto;
 font-size: 14px;
 font-style: normal;
@@ -593,7 +591,7 @@ letter-spacing: 0.42px;
   color: var(--color-web);
 }
 .svg-footer{
-  display: flex;
+ display: flex;
  gap: 10px;
  margin-top: 16px;
  padding: 0;
@@ -601,10 +599,10 @@ letter-spacing: 0.42px;
 }
 .sub-red{
   width: 206px;
-  height: 80px;
 }
 .encuentrenos{
-  font-family: 700;
+  font-family: roboto;
+  font-weight: 700;
   font-size: 14px;
   line-height: 14.41px;
  letter-spacing: 3%;
@@ -613,7 +611,6 @@ letter-spacing: 0.42px;
 }
 .footer-item{
 width: 44px;
-height: 44px;
 display: flex;
 justify-content: center;
 align-items: center;
